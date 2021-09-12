@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+        <meta charset="UTF-8"/>
+
+        <title>Tudo sobre o Google Glass</title>
+        <link rel="stylesheet" href="_css/form.css"/>
+        <link rel="stylesheet" href="_css/estilo.css"/>
+       
+
+    </head>
+    <script language="javascript" src="_javascript/funcoes.js"></script>
+    <script>
+        function calc_total() {
+            var qtd = parseInt(document.getElementById('cQtd').value);
+            tot = qtd * 1500;
+            document.getElementById('cTot').value = tot;
+        }
+    </script>
+    <body>
+    <div id="interface">
+
+        <header id="cabecalho">
+        <hgroup>   
+        <h1>Google Glass</h1>
+        <h2>A revolução do Google está chegando</h2> 
+        </hgroup>     
+        <img id="icone" src="_imagens/glass-oculos-preto-peq.png"/>
+
+    <nav id="Menu">
+    <h1>Menu Principal</h1>
+    <ul type="disc">
+        <li onmouseover="mudaFoto('_imagens/home.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="index.html">Home</a></li>
+
+        <li onmouseover="mudaFoto('_imagens/especificacoes.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="specs.html">Especificações</a></li>
+
+        <li onmouseover="mudaFoto('_imagens/fotos.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fotos.html">Fotos</a></li>
+
+        <li onmouseover="mudaFoto('_imagens/multimidia.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="multimidia.html">Multimídia</a></li>
+
+        <li onmouseover="mudaFoto('_imagens/contato.png')" onmouseout="mudaFoto('_imagens/contato.png')"><a href="fale-conosco.html">Fale conosco</a></li>
+
+    </ul>
+    </nav>
+    </header>
+    <section id="corpo-full">
+        <article id= "noticia-principal">
+        <header id="artigo-cabecalho">
+        <hgroup>
+        <h3>Fale Conosco > Contato</h3>
+        <h1>Formulário de Contato</h1>
+        <h2>Por Igor Muniz</h2>
+        <h3 class="direita">Atualizado em 07/09/2021</h3>
+        </header>
+
+<form method="post" id="fContato" action="mail:igormuniz098@gmaiL.com" oninput="calc_total();">
+<fieldset id="usuario"><legend>Identificação do Usuário</legend> 
+    <p>Nome:<input type="text" name="tNome" id="cNome" size="20" maxlength="30" placeholder="Nome Completo"/></p> 
+    <p>Senha:<input type="password" name="tSenha" id="cSenha" size="8" maxlength="8" placeholder="8 Dígitos"/></p>
+    <p>E-mail:<input type="email" name="tMail" id="cMail" size="20" maxlength="40" placeholder="gmail|hotmail..."/></p>
+    <fieldset><legend>Sexo:</legend> 
+        <input type="radio" name="tSexo" id="cMasc" checked/><label for="cMasc">Masculino</label><br/>
+        <input type="radio" name="tSexo" id="cFem"/><label for="cFem">Feminino</label>
+    </fieldset>
+    <p>Data de Nascimento:<input type="date" name="tData" id="cData"/></p>
+</fieldset> 
+
+<fieldset id="endereco"><legend>Endereço do Usuário</legend> 
+   <p><label for="cRua">Logradouro:</label>
+    <input type="text" name="tRua" id="cRua" size="50" maxlength="80" placeholder="Rua, Avenida, Travessa..."/></p> 
+   <p>Número:<input type="number" name="tNum" id="cNum" size="12" maxlength="15"/></p> 
+
+   <p><label for="cEst">Estado:</label>
+    <select> name="tEst" id="cEst">
+    <optgroup label="Região Sudeste">
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="SP">São Paulo</option>
+    </optgroup>
+    </select></p>
+
+   <p><label for="cCid">Cidade:</label>
+<input type="text" name="tCid" id="cCid" maxlength="40" size="20" placeholder="Sua Cidade"/></p>
+</fieldset>
+
+<fieldset id="mensagem"><legend>Mensagem do Usuário</legend>
+    <p>Grau de Urgência:
+       <br/>Min<input type="range" name="tUrg" id="cUrg" min="0" max="5" step="1"/>Max</p>
+
+   <p><label for="cMsg">Mensagem:</label>
+    <textarea name="tMsg" id="cMsg" cols="35" rows="5" placeholder="Deixe aqui a sua mensagem"></textarea></p> 
+</fieldset>
+
+<fieldset id="pedido"><legend>Quero um Google Glass</legend> 
+
+   <p><input type="checkbox" name="tPed" id="cPed" checked/>
+    <label for="cPed">Gostaria de adquirir um Google Glass quando disponível</label></p>
+
+   <P><label for="cCor">Cor:</label>
+    <input type="color" name="tCor" id="tCor" value="#0000FF"/></p>
+
+    <P><label for="cQtd"> Quantidade:</label><input type="number" name="tQtd" id="cQtd" min="0" max="5"/></p>
+
+    <P><label for="cTot">Preço Total: R$</label> 
+    <input type="text" name="tTot" id="cTot" placeholder="Total à pagar" readonly/></p>
+</fieldset>    
+
+<fieldset id="botao">
+   <p><input type="image" name="tEnviar" src="_imagens/botao-enviar.png"/></p>
+</fieldset>
+
+</form> 
+</article>
+</section>
+<footer id="rodape">
+    <p>Copyright 2021 - by Igor Muniz <br/>
+        <a href="https://www.linkedin.com/in/igor-muniz-6a9975202/" target="_blank">Linkedln</a> | 
+        <a href="https://github.com/Muniz098"  target="_blank">Github</a></p>
+    </div>
+    </body>
+    </html>
+    </footer>
